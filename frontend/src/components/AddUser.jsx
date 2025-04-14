@@ -15,7 +15,7 @@ const AddUser = () => {
       navigate('/') // Redirect to dashboard after success
     } catch (err) {
       console.error("Failed to add user", err)
-      alert('Something went wrong.')
+      alert('User already exists.')
     }
   }
 

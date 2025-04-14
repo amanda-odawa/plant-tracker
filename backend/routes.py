@@ -8,7 +8,7 @@ def create_routes(app):
     # PLANTS
     class PlantList(Resource):
         def get(self):
-            return [p.to_dict() for p in Plant.query.all()]
+             return [p.to_dict() for p in Plant.query.order_by(Plant.id.desc()).all()]
 
         def post(self):
             data = request.json
@@ -22,6 +22,7 @@ def create_routes(app):
             plant = Plant.query.get_or_404(plant_id)
             return plant.to_dict()
 
+    class PlantItem(Resource):
         def put(self, plant_id):
             plant = Plant.query.get_or_404(plant_id)
             for k, v in request.json.items():
@@ -33,7 +34,7 @@ def create_routes(app):
             plant = Plant.query.get_or_404(plant_id)
             db.session.delete(plant)
             db.session.commit()
-            return {'message': 'deleted'}
+            return {'message': 'Plant deleted successfully'}, 200
 
     # USERS
     class UserList(Resource):
@@ -42,15 +43,27 @@ def create_routes(app):
 
         def post(self):
             data = request.json
+            # Check if the user already exists
+            existing_user = User.query.filter_by(username=data['username']).first()
+            if existing_user:
+                return {'message': 'User already exists'}, 400  
+
             user = User(**data)
             db.session.add(user)
             db.session.commit()
-            return user.to_dict()
+            return user.to_dict(), 201 
+        
+    class UserItem(Resource):
+        def delete(self, user_id):
+            user = User.query.get_or_404(user_id)
+            db.session.delete(user)
+            db.session.commit()
+            return {'message': 'User deleted successfully'}, 200
 
     # WATERING LOGS
     class WaterLogList(Resource):
         def get(self):
-            logs = WateringLog.query.all()
+            logs = WateringLog.query.order_by(WateringLog.id.desc()).all()
             return [log.to_dict() for log in logs]
 
         def post(self):
@@ -59,6 +72,7 @@ def create_routes(app):
             db.session.add(log)
             db.session.commit()
             return log.to_dict()
+        
 
     # Register all routes
     api.add_resource(PlantList, '/plants')

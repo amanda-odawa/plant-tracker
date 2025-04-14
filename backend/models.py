@@ -44,5 +44,6 @@ class WateringLog(db.Model):
             "date": self.date,
             "water_type": self.water_type,
             "user": self.user.username if self.user else None,
-            "plant": self.plant.name if self.plant else None
+            "plant": self.plant.name if self.plant else None,
+            'plant_image': self.plant.image if self.plant else None 
         }

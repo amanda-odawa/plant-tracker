@@ -47,7 +47,7 @@ const WaterLog = () => {
     <div style={{ padding: '20px' }}>
       <h2>Create Watering Log</h2>
 
-      <form onSubmit={handleSubmit}>
+      <form onSubmit={handleSubmit} style={{ display: 'flex', flexDirection: 'column', gap: '10px', marginBottom: '20px' }}>
         <select name="user_id" value={formData.user_id} onChange={handleChange} required>
           <option value="">Select User</option>
           {users.map(user => (
@@ -75,22 +75,24 @@ const WaterLog = () => {
       </form>
 
       <h3>Filter Logs</h3>
-      <select onChange={(e) => setFilterUser(e.target.value)}>
-        <option value="">All Users</option>
-        {users.map(user => (
-          <option key={user.id} value={user.username}>{user.username}</option>
-        ))}
-      </select>
+      <div style={{ display: 'flex', gap: '10px', marginBottom: '20px' }}>
+        <select onChange={(e) => setFilterUser(e.target.value)}>
+          <option value="">All Users</option>
+          {users.map(user => (
+            <option key={user.id} value={user.username}>{user.username}</option>
+          ))}
+        </select>
 
-      <select onChange={(e) => setFilterPlant(e.target.value)}>
-        <option value="">All Plants</option>
-        {plants.map(plant => (
-          <option key={plant.id} value={plant.name}>{plant.name}</option>
-        ))}
-      </select>
+        <select onChange={(e) => setFilterPlant(e.target.value)}>
+          <option value="">All Plants</option>
+          {plants.map(plant => (
+            <option key={plant.id} value={plant.name}>{plant.name}</option>
+          ))}
+        </select>
+      </div>
 
       <h3>All Logs</h3>
-      <table>
+      <table style={{ width: '100%', borderCollapse: 'collapse' }}>
         <thead>
           <tr>
             <th>Date</th>
@@ -100,14 +102,28 @@ const WaterLog = () => {
           </tr>
         </thead>
         <tbody>
-          {filteredLogs.map((log, index) => (
-            <tr key={index}>
-              <td>{log.date}</td>
-              <td>{log.plant}</td>
-              <td>{log.water_type}</td>
-              <td>{log.user}</td>
-            </tr>
-          ))}
+          {filteredLogs.map((log, index) => {
+            const plant = plants.find(p => p.name === log.plant)
+            return (
+              <tr key={index} style={{ borderBottom: '1px solid #ccc' }}>
+                <td>{log.date}</td>
+                <td>
+                  <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
+                    {plant && (
+                      <img
+                        src={plant.image}
+                        alt={plant.name}
+                        style={{ width: '40px', height: '40px', objectFit: 'cover', borderRadius: '5px' }}
+                      />
+                    )}
+                    <span>{log.plant}</span>
+                  </div>
+                </td>
+                <td>{log.water_type}</td>
+                <td>{log.user}</td>
+              </tr>
+            )
+          })}
         </tbody>
       </table>
     </div>
@@ -115,3 +131,4 @@ const WaterLog = () => {
 }
 
 export default WaterLog
+
