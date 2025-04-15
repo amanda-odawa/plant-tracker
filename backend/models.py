@@ -12,12 +12,15 @@ class User(db.Model):
             "username": self.username
         }
 
+# Plant:WateringLog - 1:M
 class Plant(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     name = db.Column(db.String(100))
     description = db.Column(db.Text)
     watering_frequency = db.Column(db.String(50))
     image = db.Column(db.String(300))
+
+    logs = db.relationship('WateringLog', backref='plant', cascade='all, delete-orphan')
 
     def to_dict(self):
         return {
@@ -28,7 +31,7 @@ class Plant(db.Model):
             "image": self.image
         }
 
-# User:WateringLog - 1:M, Plant:WateringLog - 1:M
+# User:WateringLog - 1:M
 class WateringLog(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     date = db.Column(db.String(50))
@@ -37,7 +40,6 @@ class WateringLog(db.Model):
     plant_id = db.Column(db.Integer, db.ForeignKey('plant.id'))
 
     user = db.relationship('User', backref='logs')
-    plant = db.relationship('Plant', backref='logs')
 
     def to_dict(self):
         return {

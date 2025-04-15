@@ -48,8 +48,6 @@ const WaterLog = () => {
 
   return (
     <div style={wrapperStyle}>
-      <h2 style={headerStyle}>Watering Log Tracker</h2>
-
       <div style={containerStyle}>
         {/* Form Section (Above Logs) */}
         <div style={cardStyle}>
