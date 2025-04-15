@@ -26,7 +26,7 @@ def seed_data():
             "name": "Snake Plant",
             "description": "Also known as Mother-in-Law's Tongue, this hardy plant purifies air and thrives on neglect.",
             "watering_frequency": "Every 2-3 weeks",
-            "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRTEFtCGuBz3jETrQRa8prQUxe3cl9lx5e89w&s"
+            "image": "https://www.thespruce.com/thmb/SsHaPRyZppWJ-ZHmbKhl_vdBWBo=/2048x0/filters:no_upscale():max_bytes(150000):strip_icc()/snake-plant-care-overview-1902772-04-d3990a1d0e1d4202a824e929abb12fc1-349b52d646f04f31962707a703b94298.jpeg"
         },
         {
             "name": "Monstera Deliciosa",
