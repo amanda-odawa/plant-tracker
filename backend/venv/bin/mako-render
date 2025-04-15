@@ -1,4 +1,4 @@
-#!/home/odawa/Development/code/phase-projects/my-plant-app/backend/venv/bin/python3
+#!/home/odawa/Development/code/phase-projects/plant-tracker/backend/venv/bin/python3
 # -*- coding: utf-8 -*-
 import re
 import sys
