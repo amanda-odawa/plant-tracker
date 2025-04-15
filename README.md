@@ -37,8 +37,8 @@ A full-stack application to track and manage the care of plants. Users can creat
 2. Backend Setup:
    ```sh
    cd Backend
-    python -m venv env
-    source env/bin/activate      # (On Windows: env\Scripts\activate)
+    python -m venv venv
+    source venv/bin/activate      # (On Windows: venv\Scripts\activate)
     pip install -r requirements.txt
     ```
 3. Run the App:
