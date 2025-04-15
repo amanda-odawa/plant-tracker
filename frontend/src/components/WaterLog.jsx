@@ -96,7 +96,7 @@ const WaterLog = () => {
             <th>Date</th>
             <th>Plant</th>
             <th>Water Type</th>
-            <th>User</th>
+            <th>Watered By</th>
           </tr>
         </thead>
         <tbody>

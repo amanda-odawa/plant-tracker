@@ -1,8 +1,11 @@
 import React from 'react'
 import axios from 'axios'
 import { useFormik } from 'formik'
+import { useNavigate } from 'react-router-dom'
 
 const AddPlant = () => {
+  const navigate = useNavigate()
+
   const formik = useFormik({
     initialValues: {
       name: '',
@@ -11,9 +14,15 @@ const AddPlant = () => {
       image: ''
     },
     onSubmit: async (values, { resetForm }) => {
-      await axios.post('http://localhost:5000/plants', values)
-      alert('Plant added!')
-      resetForm()
+      try {
+        await axios.post('http://localhost:5000/plants', values)
+        alert('Plant added!')
+        resetForm()
+        navigate('/') 
+      } catch (err) {
+        console.error('Failed to add plant', err)
+        alert('Something went wrong.')
+      }
     }
   })
 
@@ -49,7 +58,10 @@ const AddPlant = () => {
           placeholder="Image URL"
           required
         />
-        <button type="submit">Add</button>
+        <div style={{ display: 'flex', gap: '10px' }}>
+          <button type="submit">Add</button>
+          <button type="button" onClick={() => navigate('/')}>Cancel</button>
+        </div>
       </form>
     </div>
   )

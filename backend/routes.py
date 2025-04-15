@@ -18,6 +18,10 @@ def create_routes(app):
             return plant.to_dict()
 
     class PlantItem(Resource):
+        def get(self, plant_id):  
+            plant = Plant.query.get_or_404(plant_id)
+            return plant.to_dict()
+
         def put(self, plant_id):
             plant = Plant.query.get_or_404(plant_id)
             for k, v in request.json.items():
