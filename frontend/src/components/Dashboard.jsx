@@ -17,7 +17,8 @@ const Dashboard = () => {
     } catch (err) {
       console.error('Error fetching plants:', err)
     }
-  }
+  }  
+  
 
   const handleDelete = async (id) => {
     const confirmDelete = window.confirm('Are you sure you want to delete this plant?')
