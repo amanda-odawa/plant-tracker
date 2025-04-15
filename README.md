@@ -69,9 +69,10 @@ The frontend will be live at http://localhost:5173
 | POST      | `/wateringlogs`         | Create new watering log     |
 
 ## Website Navigation
-- **Home Dashboard (/plants)**: View all plants in the system
-- **Add Plant**: RCreate new plant
+- **Home Dashboard**: View all plants in the system
+- **Add Plant**: Create new plant
 - **Add User Page**: Create new user
+- **Watering Log Page**: Create nw log and view logs
 
 ## Contributing
 Contributions are welcome! Please open an issue or submit a pull request.
