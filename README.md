@@ -4,6 +4,11 @@ A full-stack application to track and manage the care of plants. Users can creat
 
 ---
 
+## Contributed by:
+- Faith Wanjiku: Frontend and Styling
+- Habiba Guyo: Frontend and README.md
+- Amanda Odawa: Backend and Testing
+
 ##  Features
 
 -  Create, Read, Update, Delete (CRUD) functionality for plants
