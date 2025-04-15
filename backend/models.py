@@ -28,6 +28,7 @@ class Plant(db.Model):
             "image": self.image
         }
 
+# User:WateringLog - 1:M, Plant:WateringLog - 1:M
 class WateringLog(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     date = db.Column(db.String(50))
