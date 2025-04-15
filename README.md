@@ -5,9 +5,9 @@ A full-stack application to track and manage the care of plants. Users can creat
 ---
 
 ## Contributed by:
-- Faith Wanjiku(https://github.com/wanjiku8): Frontend and Styling 
-- Habiba Guyo: Frontend and README.md
-- Amanda Odawa: Backend and Testing
+- [Faith Wanjiku](https://github.com/wanjiku8): Frontend and Styling 
+- [Habiba Guyo](https://github.com/Ladyhabz1): Frontend and README.md
+- [Amanda Odawa](https://github.com/amanda-odawa): Backend and Testing
 
 ##  Features
 
@@ -31,7 +31,7 @@ A full-stack application to track and manage the care of plants. Users can creat
 ## Installation
 1. Fork and clone the repository, then navigate to it:
    ```sh
-   git clone https://github.com/Ladyhabz1/plant-care-tracker/blob/main/README.md
+   git clone https://github.com/amanda-odawa/plant-tracker
    cd project-name
    ```
 2. Backend Setup:
