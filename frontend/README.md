@@ -1,4 +1,4 @@
-#  My Plant App
+#  Plant Care Tracker
 
 A full-stack application to track and manage the care of plants. Users can create accounts, add plants with images, log watering events, and view all related information through a simple and interactive UI. Built using Flask for the backend and React for the frontend.
 
