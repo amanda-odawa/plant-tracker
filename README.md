@@ -5,7 +5,7 @@ A full-stack application to track and manage the care of plants. Users can creat
 ---
 
 ## Contributed by:
-- Faith Wanjiku: Frontend and Styling
+- Faith Wanjiku(https://github.com/wanjiku8): Frontend and Styling 
 - Habiba Guyo: Frontend and README.md
 - Amanda Odawa: Backend and Testing
 
