@@ -159,9 +159,9 @@ def seed_data():
 
     # Create sample watering logs
     water_types = ["fresh water", "rain water", "salt water"]
-    for _ in range(10):
+    for _ in range(30):
         log = WateringLog(
-            date=(datetime.now() - timedelta(days=random.randint(0, 10))).strftime("%Y-%m-%d"),
+            date=(datetime.now() - timedelta(days=random.randint(0, 30))).strftime("%Y-%m-%d"),
             water_type=random.choice(water_types),
             user_id=random.choice(users).id,
             plant_id=random.choice(plants).id
